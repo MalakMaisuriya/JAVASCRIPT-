@@ -1,0 +1,122 @@
+/* Body with animated RGB background */
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s, color 0.3s;
+    background: linear-gradient(135deg, rgb(137, 247, 254), rgb(102, 166, 255), rgb(255, 183, 197), rgb(255, 243, 128));
+    background-size: 400% 400%;
+    animation: rgbAnimation 15s ease infinite;
+}
+
+/* RGB gradient animation for light mode */
+@keyframes rgbAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Calculator container */
+.calculator {
+    background: #fff;
+    transition: background 0.3s, box-shadow 0.3s;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    padding: 20px;
+}
+
+/* Screen display */
+.screen {
+    height: 60px;
+    text-align: right;
+    font-size: 2rem;
+    background: #f0f0f0;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    box-shadow: inset 0 3px 5px rgba(0,0,0,0.1);
+}
+
+/* Buttons base */
+button {
+    font-size: 1.5rem;
+    border-radius: 10px;
+    transition: 0.3s all;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Gradient shine effect on hover */
+button::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(45deg, rgba(255,255,255,0.2), rgba(255,255,255,0));
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+button:hover::after {
+    opacity: 1;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+button:active {
+    transform: translateY(2px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+/* Theme toggle button */
+#theme-toggle {
+    font-size: 1.8rem;
+    transition: 0.3s;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* Dark theme with animated RGB background */
+.dark-theme {
+    color: #fff;
+    background: linear-gradient(135deg, rgb(18,18,18), rgb(40,40,60), rgb(80,20,50), rgb(30,30,40));
+    background-size: 400% 400%;
+    animation: rgbAnimationDark 15s ease infinite;
+}
+
+@keyframes rgbAnimationDark {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.dark-theme .calculator {
+    background: #1e1e1e;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.dark-theme .screen {
+    background: #333;
+    color: #fff;
+    box-shadow: inset 0 3px 5px rgba(0,0,0,0.5);
+}
+
+.dark-theme button {
+    background: #333 !important;
+    color: #fff !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+}
+
+.dark-theme button:hover {
+    background: #555 !important;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.6);
+}

@@ -1,0 +1,100 @@
+@keyframes rgbHover {
+  0%   { box-shadow: 0 0 12px #001f3f; border-color: #001f3f; } 
+  25%  { box-shadow: 0 0 12px #003366; border-color: #003366; } 
+  50%  { box-shadow: 0 0 12px #004080; border-color: #0059b3; } 
+  75%  { box-shadow: 0 0 12px #0059b3; border-color: #003366; }
+  100% { box-shadow: 0 0 12px #001f3f; border-color: #001f3f; }
+}
+
+.cell:hover {
+  background: rgba(255,255,255,0.05); 
+  transform: scale(1.08);
+  animation: rgbHover 3s linear infinite; 
+}
+
+
+body {
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  background-size: 200% 200%;
+  animation: rgbFlow 10s infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 35px;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+  font-weight: 700;
+  text-shadow: 0 0 15px rgba(255,255,255,0.6);
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-around;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 12px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 12px;
+  font-size: 2.5rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.cell:hover {
+  background: rgba(255,255,255,0.2);
+  transform: scale(1.08);
+  border-color: #00ffff;
+  box-shadow: 0 0 12px #00ffff;
+}
+
+#resetBtn {
+  margin-top: 20px;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  transition: 0.3s;
+}
+
+#resetBtn:hover {
+  background: rgba(255,255,255,0.2);
+  transform: scale(1.05);
+}
+
+footer {
+  position: absolute;
+  bottom: 15px;
+  font-size: 16px;
+  color: white;
+  opacity: 0.85;
+}
