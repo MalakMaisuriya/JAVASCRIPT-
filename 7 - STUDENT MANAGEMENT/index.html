@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management | Malak</title>
+    <link rel="icon" href="assets/images/Mk-logo-modified.png" type="image/png">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <h2>Student Management</h2>
+
+    <form id="studentForm">
+        <div class="grid">
+            <div>
+                <label>Name</label>
+                <input type="text" id="name">
+            </div>
+
+            <div>
+                <label>Email</label>
+                <input type="email" id="email">
+            </div>
+
+            <div>
+                <label>Gr. ID</label>
+                <input type="number" id="grid">
+            </div>
+
+            <div>
+                <label>Course</label>
+                <select id="course">
+                    <option value="">Select</option>
+                    <option value="FSD">FSD</option>
+                    <option value="UI/UX">UI/UX</option>
+                    <option value="AI/ML">AI/ML</option>
+                </select>
+            </div>
+        </div>
+
+        <button id="addBtn" type="submit">Add / Update</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Sr</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Gr. ID</th>
+                <th>Course</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody id="tbody"></tbody>
+    </table>
+
+    <p class="totalBox">Total Students: <span id="total">0</span></p>
+    <p class="emptyMsg">No students added yet...</p>
+</div>
+
+<script src="assets/js/index.js"></script>
+</body>
+</html>
